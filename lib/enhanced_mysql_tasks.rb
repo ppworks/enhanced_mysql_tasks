@@ -10,3 +10,6 @@ elsif Gem::Version.create(ActiveRecord.version) >= Gem::Version.create('4.1.0')
   require 'enhanced_mysql_tasks/rails41/mysql_database_tasks'
   ActiveRecord::Tasks::MySQLDatabaseTasks.__send__(:prepend, EnhancedMySQLTasks::Rails41::MySQLDatabaseTasks)
 end
+
+require 'enhanced_mysql_tasks/schema_statements'
+ActiveRecord::ConnectionAdapters::AbstractAdapter.__send__(:prepend, EnhancedMySQLTasks::SchemaStatements)
