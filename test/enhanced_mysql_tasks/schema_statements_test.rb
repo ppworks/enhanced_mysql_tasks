@@ -14,8 +14,6 @@ class EnhancedMySQLTasks::SchemaStatementsTest < Minitest::Test
     assert_equal "INSERT INTO schema_migrations (version) VALUES
 ('20160101010101'),
 ('20160201010102'),
-('20160301010103');
-
-", ActiveRecord::Base.connection.dump_schema_information
+('20160301010103');", ActiveRecord::Base.connection.dump_schema_information
   end
 end
