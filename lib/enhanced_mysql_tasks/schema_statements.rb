@@ -8,7 +8,7 @@ module EnhancedMySQLTasks
       sql << ActiveRecord::SchemaMigration.order('version').map { |sm|
         "('#{sm.version}')"
       }.join(",\n")
-      sql << ";\n"
+      sql << ";"
     end
   end
 end
